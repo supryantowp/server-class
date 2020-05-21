@@ -1,0 +1,29 @@
+
+// 
+// Cards
+//
+
+.card {
+  border: none;
+  box-shadow: $shadow;
+  margin-bottom: 30px;
+  background: $dark;
+}
+
+@media (min-width: 576px) {
+  .card-columns {
+      -webkit-column-gap: 30px;
+      -moz-column-gap: 30px;
+      column-gap: 30px;
+  }
+}
+
+.card-columns .card {
+  margin-bottom: 30px;
+}
+
+.list-group-flush{
+  .list-group-item{
+    background: $dark;
+  }
+}

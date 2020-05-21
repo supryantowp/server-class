@@ -1,0 +1,150 @@
+//Dropdown
+.dropdown-menu {
+  padding: 4px 0;
+  font-size: $base-font;
+  box-shadow: 0 2px 30px rgba(0, 0, 0, 0.08);
+  background-color: $dark;
+  border-color: transparent;
+  margin: 0;
+  .dropdown-divider{
+    border-color: rgba($white, 0.04);
+  }
+}
+
+.dropdown-item {
+  background-color: $dark;
+  padding: .55rem 1.5rem;
+  color: $white;
+  
+  &:active,&:hover {
+    background-color: lighten($dark, 3%);
+    color: $white;
+  }
+}
+
+.dropdown-item.active, .dropdown-item:active {
+  background-color: lighten($dark, 3%);
+  color: $white;
+}
+
+.dropdown-item-text{
+  color: $white;
+}
+
+.breadcrumb>li+li:before {
+  padding: 0 5px;
+  color: $muted;
+  content: "\f105" !important;
+  font-family: 'Font Awesome 5 Free';
+  font-weight: 900;
+}
+
+
+//Background color
+.bg-primary {
+  background-color: $primary !important;
+}
+
+.bg-success {
+  background-color: $success !important;
+}
+
+.bg-info {
+  background-color: $info !important;
+}
+
+.bg-warning {
+  background-color: $warning !important;
+}
+
+.bg-danger {
+  background-color: $danger !important;
+}
+
+.bg-muted {
+  background-color: $muted !important;
+}
+
+.bg-white {
+  background-color: $white !important;
+}
+
+
+//Text Color
+.text-white {
+  color: $white !important;
+}
+
+.text-danger {
+  color: $danger !important;
+}
+
+.text-muted {
+  color: $muted !important;
+}
+
+.text-primary {
+  color: $primary !important;
+}
+
+.text-warning {
+  color: $warning !important;
+}
+
+.text-success {
+  color: $success !important;
+}
+
+.text-info {
+  color: $info !important;
+}
+
+.text-dark {
+  color: $dark !important;
+}
+
+
+//Badge
+
+.badge {
+  font-weight: 500;
+}
+
+
+.badge-primary {
+  background-color: $primary;
+}
+
+.badge-success {
+  background-color: $success;
+}
+
+.badge-info {
+  background-color: $info;
+}
+
+.badge-warning {
+  background-color: $warning;
+  color: white;
+}
+
+.badge-danger {
+  background-color: $danger;
+}
+
+.badge-dark {
+  background-color: darken($dark, 3%);
+}
+
+// typography
+
+dt {
+  font-weight: 500;
+}
+
+// images
+
+.img-thumbnail{
+  background: lighten($dark, 4%);
+  border-color: lighten($dark, 4%);
+}
