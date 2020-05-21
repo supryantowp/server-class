@@ -45,7 +45,7 @@
                                     @forelse ($users as $user)
                                     <tr>
                                           <td>{{$loop->iteration}}</td>
-                                          <td>'siswa'</td>
+                                          <td>'{{$user->roles[0]->name}}'</td>
                                           <td>{{$user->name}}</td>
                                           <td>{{$user->email}}</td>
                                           <td>{{$user->email_verified_at ? 'true' : 'false'}}</td>
