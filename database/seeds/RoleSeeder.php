@@ -14,7 +14,7 @@ class RoleSeeder extends Seeder
      */
     public function run()
     {
-        User::create([
+        $user = User::create([
             'nik' => 111,
             'name' => 'Admin',
             'email' => 'admin@admin.com',
@@ -29,10 +29,6 @@ class RoleSeeder extends Seeder
             'name' => 'siswa'
         ]);
 
-        DB::table('model_has_roles')->insert([
-            'role_id' => 1,
-            'model_type' => 'App\User',
-            'model_id' => 1
-        ]);
+        $user->assingRole('admin');
     }
 }
