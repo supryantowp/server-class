@@ -40,7 +40,7 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::resource('mata_pelajaran', 'MataPelajaranController');
     Route::resource('berkas', 'BerkasController');
 
-    Route::group(['namespace' => 'setting', 'prefix' => 'setting'], function () {
+    Route::group(['namespace' => 'Setting', 'prefix' => 'setting'], function () {
         Route::post('user/import', 'UserSettingController@import')->name('user.import');
         Route::resource('user_setting', 'UserSettingController');
     });
