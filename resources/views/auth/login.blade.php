@@ -6,15 +6,15 @@
 
             <div class="p-3">
                   <h4 class="text-white font-18 m-b-5 text-center">Welcome Back !</h4>
-                  <p class="text-white-50 text-center">Sign in to continue to {{config('app.name', 'Laravel')}}.</p>
+                  <p class="text-white-50 text-center">Sign in to continue to Server Class.</p>
 
                   <form class="form-horizontal m-t-30" action="{{route('login')}}" method="POST">
 
                         @csrf
 
                         <div class="form-group">
-                              <label>Nik / Email</label>
-                              <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter nik / email" />
+                              <label>Email</label>
+                              <input type="text" class="form-control @error('email') is-invalid @enderror" name="email" value="{{ old('email') }}" placeholder="Enter email" />
 
                               @error('email')
                               <span class="invalid-feedback" role="alert">

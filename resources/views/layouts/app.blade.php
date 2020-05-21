@@ -5,7 +5,7 @@
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-      <title>{{ config('app.name', 'Laravel') }}</title>
+      <title>Server Class</title>
       <meta content="{{config('app.name','Laravel')}}" name="description" />
       {{-- <link rel="shortcut icon" href="images/favicon.ico"> --}}
 
@@ -49,7 +49,7 @@
                   </div> <!-- content -->
 
                   <footer class="footer">
-                        © {{Date('Y')}} {{config('app.name')}} - <span class="d-none d-sm-inline-block"> Crafted with <i class="mdi mdi-heart text-danger"></i> by Kiyoshi</span>.
+                        © {{Date('Y')}} Server Class - <span class="d-none d-sm-inline-block"> Crafted with <i class="mdi mdi-heart text-danger"></i> by Kiyoshi</span>.
                   </footer>
 
             </div>

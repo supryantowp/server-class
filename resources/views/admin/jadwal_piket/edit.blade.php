@@ -10,7 +10,7 @@
             <div class="page-title-box">
                   <h4 class="page-title">Jadwal Piket</h4>
                   <ol class="breadcrumb">
-                        <li class="breadcrumb-item active"><a href="{{route('admin')}}">{{config('app.name')}}</a></li>
+                        <li class="breadcrumb-item active"><a href="{{route('admin')}}">Server Class</a></li>
                         <li class="breadcrumb-item active"><a href="{{route('jadwal_piket.index')}}">Jadwal Piket</a></li>
                         <li class="breadcrumb-item active">Edit</li>
                   </ol>

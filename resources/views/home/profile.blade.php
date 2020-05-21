@@ -7,9 +7,9 @@
                   <h4 class="page-title">Profle</h4>
                   <ol class="breadcrumb">
                         @role('admin')
-                        <li class="breadcrumb-item"><a href="{{route('admin')}}">{{config('app.name')}}</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('admin')}}">Server Class</a></li>
                         @else
-                        <li class="breadcrumb-item"><a href="{{route('siswa')}}">{{config('app.name')}}</a></li>
+                        <li class="breadcrumb-item"><a href="{{route('siswa')}}">Server Class</a></li>
                         @endrole
                         <li class="breadcrumb-item active">Profile</li>
                   </ol>

@@ -7,7 +7,7 @@
                   <h4 class="page-title">Dashboard</h4>
                   <ol class="breadcrumb">
                         <li class="breadcrumb-item active">
-                              Welcome to {{config('app.name')}} Dashboard
+                              Welcome to Server Class Dashboard
                         </li>
                   </ol>
             </div>

@@ -5,7 +5,7 @@
       <meta charset="utf-8" />
       <meta http-equiv="X-UA-Compatible" content="IE=edge">
       <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=0">
-      <title>{{ config('app.name', 'Laravel') }}</title>
+      <title>Server Class</title>
       <meta content="{{config('app.name','Laravel')}}" name="description" />
 
       {{-- <link rel="shortcut icon" href="assets/images/favicon.ico"> --}}
