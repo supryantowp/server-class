@@ -1,8 +1,21 @@
-<h1> My Boilerplate </h1>
-- dashboard lexa admin
-- laravel v7
+# Website Kelas Server RPL 👊
 
-<h1>Feature</h1>
-- Authentication
-- Setting Profile
-- Manajement User
+## Introduction
+
+> website dengan menampilkan seputar informasi keigatan sekolah. dan absensi buat murid kelas 11 RPL
+
+## Code Samples
+
+> Khusus Buat murid murid kelas 11 RPL
+
+## Installation
+
+> git clone git@github.com:supryantowp/server-class.git
+
+> composer install
+
+> npm install
+
+> cp .env.example .env
+
+> php artisan migrate:fresh --seed
