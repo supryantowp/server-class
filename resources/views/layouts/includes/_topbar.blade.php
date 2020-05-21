@@ -4,10 +4,10 @@
       <div class="topbar-left">
             <a href="{{route('admin')}}" class="logo">
                   <span>
-                        <img src="{{asset('images/logo-light.png')}}" alt="" height="18">
+                        <h4 class="text-white mt-4">Server</h4>
                   </span>
                   <i>
-                        <img src="{{asset('images/logo-sm.png')}}" alt="" height="22">
+                        <h4 class="text-white mt-4">S</h4>
                   </i>
             </a>
       </div>

@@ -4,10 +4,10 @@
 <div class="row">
       <div class="col-sm-12">
             <div class="page-title-box">
-                  <h4 class="page-title">Siswa</h4>
+                  <h4 class="page-title">Mata Pelajaran</h4>
                   <ol class="breadcrumb">
                         <li class="breadcrumb-item active"><a href="{{route('admin')}}">{{config('app.name')}}</a></li>
-                        <li class="breadcrumb-item active">Siswa</li>
+                        <li class="breadcrumb-item active">Mata Pelajaran</li>
                   </ol>
             </div>
       </div>
@@ -19,8 +19,8 @@
       <div class="col-12">
             <div class="card">
                   <div class="card-header d-flex justify-content-between">
-                        <h4 class="header-title mt-0">Siswa</h4>
-                        <a class="btn btn-primary" href="{{route('siswa.create')}}"><i class="mdi mdi-plus mr-2"></i>tambah</a>
+                        <h4 class="header-title mt-0">Mata Pelajaran</h4>
+                        <a class="btn btn-primary" href="{{route('mata_pelajaran.create')}}"><i class="mdi mdi-plus mr-2"></i>tambah</a>
                   </div>
                   <div class="card-body">
                         @include('vendor._message')
@@ -31,26 +31,22 @@
                               <thead>
                                     <tr>
                                           <th>#</th>
-                                          <th>Nik</th>
-                                          <th>Nama</th>
-                                          <th>Email</th>
+                                          <th>Mata Pelajaran</th>
                                           <th>Pilihan</th>
                                     </tr>
                               </thead>
                               <tbody>
-                                    @foreach ($siswas as $siswa)
+                                    @foreach ($mapels as $mapel)
                                     <tr>
                                           <td>{{$loop->iteration}}</td>
-                                          <td>{{$siswa->nik}}</td>
-                                          <td>{{$siswa->nama}}</td>
-                                          <td>{{$siswa->email}}</td>
+                                          <td>{{$mapel->mata_pelajaran}}</td>
                                           <td>
                                                 <div class="d-flex">
-                                                      <a class="btn btn-warning btn-sm mr-1" href="{{route('siswa.edit', ['siswa' => $siswa->id])}}">edit</a>
-                                                      <form action="{{route('siswa.destroy', ['siswa' => $siswa->id])}}" method="post">
+                                                      <a class="btn btn-sm btn-warning mr-1" href="{{route('mata_pelajaran.edit', ['mata_pelajaran' => $mapel->id])}}">edit</a>
+                                                      <form action="{{route('mata_pelajaran.destroy', ['mata_pelajaran' => $mapel->id] )}}" method="post">
                                                             @csrf
-                                                            @method('DELETE')
-                                                            <button class="btn btn-delete btn-danger btn-sm">hapus</button>
+                                                            @method("DELETE")
+                                                            <button class="btn btn-danger btn-sm btn-delete">hapus</button>
                                                       </form>
                                                 </div>
                                           </td>
@@ -70,7 +66,7 @@
                               <button type="button" class="close" data-dismiss="modal" aria-hidden="true">×</button>
                         </div>
                         <div class="modal-body">
-                              <form action="{{route('siswa.import')}}" method="post" enctype="multipart/form-data">
+                              <form action="{{route('mapel.import')}}" method="post" enctype="multipart/form-data">
                                     @csrf
                                     <div class="form-group row">
                                           <label class="col-sm-3">File</label>

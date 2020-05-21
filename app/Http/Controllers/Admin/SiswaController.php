@@ -3,6 +3,7 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Http\Requests\SiswaRequest;
 use App\Imports\SiswaImport;
 use App\Model\Siswa;
 use Illuminate\Http\Request;
@@ -28,7 +29,7 @@ class SiswaController extends Controller
      */
     public function create()
     {
-        //
+        return view('admin.siswa.create');
     }
 
     /**
@@ -37,9 +38,21 @@ class SiswaController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(SiswaRequest $request)
     {
-        //
+        Siswa::create([
+            'nik' => $request->nik,
+            'nama' => $request->nama,
+            'email' => $request->email,
+            'nisn' => $request->nisn,
+            'jenis_kelamin' => $request->jenis_kelamin,
+            'tanggal_lahir' => $request->tanggal_lahir,
+            'alamat' => $request->alamat,
+            'no_telepon' => $request->no_telepon,
+        ]);
+
+        session()->flash('success', 'berhasil');
+        return redirect()->route('siswa.index');
     }
 
     /**
@@ -61,7 +74,9 @@ class SiswaController extends Controller
      */
     public function edit($id)
     {
-        //
+        $siswa = Siswa::whereId($id)->first();
+
+        return view('admin.siswa.edit', compact('siswa'));
     }
 
     /**
@@ -71,9 +86,20 @@ class SiswaController extends Controller
      * @param  int  $id
      * @return \Illuminate\Http\Response
      */
-    public function update(Request $request, $id)
+    public function update(SiswaRequest $request, $id)
     {
-        //
+        $siswa = Siswa::whereId($id)->first();
+        $siswa->nama = $request->nama;
+        $siswa->email = $request->email;
+        $siswa->nisn = $request->nisn;
+        $siswa->jenis_kelamin = $request->jenis_kelamin;
+        $siswa->tanggal_lahir = $request->tanggal_lahir;
+        $siswa->alamat = $request->alamat;
+        $siswa->no_telepon = $request->no_telepon;
+
+        $siswa->save();
+        session()->flash('success', 'berhasil');
+        return redirect()->route('siswa.index');
     }
 
     /**
@@ -84,7 +110,11 @@ class SiswaController extends Controller
      */
     public function destroy($id)
     {
-        //
+        $siswa = Siswa::whereId($id)->first();
+        $siswa->delete();
+
+        session()->flash('success', 'berhasil');
+        return redirect()->route('siswa.index');
     }
 
     public function import(Request $request)

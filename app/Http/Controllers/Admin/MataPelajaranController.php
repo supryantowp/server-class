@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\MapelImport;
+use App\Model\MataPelajaran;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class MataPelajaranController extends Controller
 {
@@ -14,7 +17,8 @@ class MataPelajaranController extends Controller
      */
     public function index()
     {
-        //
+        $mapels = MataPelajaran::all();
+        return view('admin.mapel.index', compact('mapels'));
     }
 
     /**
@@ -81,5 +85,20 @@ class MataPelajaranController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+        $nama_file = time() . $file->getClientOriginalName();
+        $file->move('file_mapel', $nama_file);
+        Excel::import(new MapelImport, public_path('/file_mapel/' . $nama_file));
+
+        session()->flash('success', 'berhasil');
+        return redirect()->route('mata_pelajarn.index');
     }
 }

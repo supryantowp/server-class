@@ -21,7 +21,7 @@
                   <div class="card-header d-flex justify-content-between">
                         <h4 class="header-title mt-0">Jadwal Piket</h4>
                         @role('admin')
-                        <a class="btn btn-primary" href="{{route('jadwal_piket.create')}}"> <i class="mdi mdi-arrow-left mr-2"></i> tambah</a>
+                        <a class="btn btn-primary" href="{{route('jadwal_piket.create')}}"> <i class="mdi mdi-plus mr-2"></i> tambah</a>
                         @endrole
                   </div>
                   <div class="card-body">

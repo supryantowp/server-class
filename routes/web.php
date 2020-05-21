@@ -29,7 +29,8 @@ Route::group(['namespace' => 'Admin', 'prefix' => 'admin', 'middleware' => ['aut
     Route::get('/', 'AdminController@index')->name('admin');
 
     Route::post('siswa/import', 'SiswaController@import')->name('siswa.import');
-
+    Route::post('guru/import', 'GuruController@import')->name('guru.import');
+    Route::post('mapel/import', 'MataPelajaranController@import')->name('mapel.import');
 
     Route::resource('daftar_absensi', 'DaftarAbsensiController');
     Route::resource('siswa', 'SiswaController');

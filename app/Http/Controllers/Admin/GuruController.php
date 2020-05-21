@@ -3,7 +3,10 @@
 namespace App\Http\Controllers\Admin;
 
 use App\Http\Controllers\Controller;
+use App\Imports\GuruImport;
+use App\Model\Guru;
 use Illuminate\Http\Request;
+use Maatwebsite\Excel\Facades\Excel;
 
 class GuruController extends Controller
 {
@@ -14,7 +17,8 @@ class GuruController extends Controller
      */
     public function index()
     {
-        //
+        $gurus = Guru::all();
+        return view('admin.guru.index', compact('gurus'));
     }
 
     /**
@@ -81,5 +85,20 @@ class GuruController extends Controller
     public function destroy($id)
     {
         //
+    }
+
+    public function import(Request $request)
+    {
+        $request->validate([
+            'file' => 'required|mimes:csv,xls,xlsx'
+        ]);
+
+        $file = $request->file('file');
+        $nama_file = time() . $file->getClientOriginalName();
+        $file->move('file_guru', $nama_file);
+        Excel::import(new GuruImport, public_path('/file_guru/' . $nama_file));
+
+        session()->flash('success', 'berhasil');
+        return redirect()->route('guru.index');
     }
 }
