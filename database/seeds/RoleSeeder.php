@@ -29,6 +29,6 @@ class RoleSeeder extends Seeder
             'name' => 'siswa'
         ]);
 
-        $user->assingRole('admin');
+        $user->assignRole('admin');
     }
 }
