@@ -14,7 +14,7 @@
 
                         <div class="form-group">
                               <label>Nik / Email</label>
-                              <input id="identity" type="text" class="form-control @error('identity') is-invalid @enderror" name="identity" value="{{ old('identity') }}" placeholder="Enter nik / email" />
+                              <input type="text" class="form-control @error('identity') is-invalid @enderror" name="identity" value="{{ old('identity') }}" placeholder="Enter nik / email" />
 
                               @error('identity')
                               <span class="invalid-feedback" role="alert">
